@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Maria Perez</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <button id="toggle-theme">
+                    <span id="sun-icon" class="zoom">☼</span>
+                    <span id="moon-icon" class="zoom" style="display:none;">☾</span>
+                    <svg id="system-icon" class="toggle-theme absolute size-5 transition-all" data-astro-cid-x3pjskd3="" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="scale: 1;"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path> <path d="M7 20h10"></path> <path d="M9 16v4"></path> <path d="M15 16v4"></path> </svg>
+                </button>
+            </ul>
+        </nav>
+        <ul id="theme-list" style="display: none;">
+            <li id="light">Light</li>
+            <li id="dark">Dark</li>
+            <li id="system">System</li>
+        </ul>
+    </header>
+    
+    <section id="inicio">
+        <div class="perfil">
+            <img src="img/ft-perfil.jpg" alt="Foto de perfil">
+            <button class="disponible">Disponible para trabajar</button>
+        </div>
+        <h1 class="title">Hey, soy Maria Perez</h1>
+        <p class="text-descripcion">+3 años de experiencia. <strong>Diseñadora y programadora enfocada en UX/UI y desarrollo frontend </strong>  
+             
+             de Venezolana, en Italia 🇮🇹. Especializada en el desarrollo de aplicaciones web únicas. </p>
+             <div class="botones">
+                <a href="mailto:mariavpl1997@gmail.com" class="btn gmail-btn">
+                    <span class="icon">✉︎</span> Contactame
+                </a>
+
+                <a target="_blank" href="https://www.linkedin.com/in/maria-perez-lopez/" role="link" class="btn linkedin-btn inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                    LinkedIn
+                    </a>
+            
+            </div>
+    </section>
+    
+    <section id="experiencia">
+        <h2 class="titulo-experiencia" >
+            Experiencia laboral
+        </h2>
+        <div class="linea-tiempo">
+            <div class="punto">
+                <div class="circulo"></div>
+                <div class="descripcion">
+                    <span class="titulo">Diseñadora UX/UI </span>
+                    <span class="empresa">Codo a codo</span>
+                    <span class="ano">2023</span>
+                </div>
+                <span class="texto-descripcion">Diseñé una plataforma en Figma para facilitar el proceso de adopción de perros en Buenos Aires. Me encargué del diseño integral: desde el logo, colores, tipografía, hasta el enfoque en el bienestar animal. Elaboré prototipos de baja, media y alta fidelidad, cuidando la experiencia del usuario en cada etapa.</span>
+            </div>
+            <div class="punto">
+                <div class="circulo"></div>
+                <div class="descripcion">
+                    <span class="titulo">Desarrolladora Frontend </span>
+                    <span class="empresa">SunViaggi</span>
+                    <span class="ano">2024</span>
+                </div>
+                <span class="texto-descripcion">Desarrollé la parte frontend de un conjunto de landing pages básicas orientadas al SEO y la captación orgánica de clientes para una empresa de servicios. Me encargué también de la redacción de los textos (copywriting) adaptados a cada página. En total, se crearon entre 10 y 15 páginas con estructura clara, optimizadas para buscadores y alineadas con la identidad de marca.</span>
+            </div>
+
+            <div class="punto">
+                <div class="circulo"></div>
+                <div class="descripcion">
+                    <span class="titulo">Desarrolladora Frontend </span>
+                    <span class="empresa">TuColombiaDMC</span>
+                    <span class="ano">2023</span>
+                </div>
+                <span class="texto-descripcion">Diseñé y estructuré el sitio Tu Colombia DCM en WordPress, siguiendo las exigencias específicas del cliente. Se definió toda la arquitectura del contenido, se ajustaron diversos parámetros visuales y funcionales, y el proyecto quedó completamente preparado para su futura implementación.</span>
+            </div>
+        </div>
+    </section>
+    
+    <section id="proyectos">
+        <h2 id="titulo-proyectos">
+            <svg id="size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M7 8l-4 4l4 4"></path>
+                <path d="M17 8l4 4l-4 4"></path>
+                <path d="M14 4l-4 16"></path>
+            </svg>
+            Proyectos
+        </h2>
+    
+        <div class="proyecto">
+            <img src="img/proyecto1.jpg" alt="Proyecto 1" class="zoom">
+    
+            <div class="proyecto-contenido">
+                <h3>Landing page SunViaggi</h3>
+    
+                <div class="tecnologias">
+                    <a class="tecnologia-btn1">HTML</a>
+                    <a class="tecnologia-btn2">CSS</a>
+                    <a class="tecnologia-btn2">JavaScript</a>
+                </div>
+    
+                <p class="descripcion-pro">He desarrollado entre 10 y 15 landing pages básicas para un tour operador de viajes para jóvenes, estructurando el contenido de manera clara y optimizada. Me encargué de la organización del texto, la jerarquía visual y la implementación de cada página para garantizar una experiencia fluida y atractiva para los usuarios.</p>
+    
+                <div class="boton">
+                    <a target="_blank" href="https://www.sunviaggi.it/landing/come-arrivare-a-lloret-de-mar" role="link" class="buttom inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        Preview
+                        </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="proyecto">
+            <img src="img/proyecto2.jpg" alt="Proyecto 1" class="zoom">
+    
+            <div class="proyecto-contenido">
+                <h3>TuColombiaDCM</h3>
+    
+                <div class="tecnologias">
+                    <a class="tecnologia-btn1">PHP</a>
+                    <a class="tecnologia-btn2">CSS</a>
+                </div>
+    
+                <p class="descripcion-pro">Desarrollé un proyecto en WordPress con Elementor, personalizando la plataforma y ajustando detalles según las necesidades del cliente. Aunque el proyecto no se finalizó por falta de tiempo del cliente, dejé una base estructurada y funcional para su futura implementación.</p>
+    
+                <div class="boton">
+                    <a target="_blank" href="https://www.tucolombiadmc.com/" role="link" class="buttom inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        Preview
+                        </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="proyecto">
+            <img src="img/proyecto3.jpg" alt="Proyecto 1" class="zoom">
+    
+            <div class="proyecto-contenido">
+                <h3>UI/UX PROFESSIONALS</h3>
+    
+                <div class="tecnologias">
+                    <a class="tecnologia-btn1">Figma</a>
+                    <a class="tecnologia-btn1">PHP</a>
+                    <a class="tecnologia-btn2">CSS</a>
+                </div>
+    
+                <p class="descripcion-pro">Desarrollé diversas landing pages en Figma enfocadas en la experiencia del usuario (UX) para profesionales del sector. Estos diseños incluyeron la estructuración visual de las páginas y la integración de formularios de carga de datos específicos para la recopilación de información del juego. El objetivo fue facilitar un flujo de interacción claro y eficiente, optimizando la captura de datos de manera intuitiva y funcional.</p>
+    
+                <div class="boton">
+                    <a target="_blank" href="https://www.figma.com/proto/VpMNRt4tPaJCq7s2SpGOKu/UI%2FUX-Professional-(Copy)?node-id=13-82&t=apXZTPhdfO8HhU8K-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=13%3A82&show-proto-sidebar=1" role="link" class="buttom inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        Preview
+                        </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="proyecto">
+            <img src="img/proyecto4.jpg" alt="Proyecto 1" class="zoom">
+    
+            <div class="proyecto-contenido">
+                <h3>Blaster</h3>
+    
+                <div class="tecnologias">
+                    <a class="tecnologia-btn1">C#</a>
+                    <a class="tecnologia-btn2">Unity</a>
+                </div>
+    
+                <p class="descripcion-pro">Desarrollé un videojuego 2D en Unity inspirado en el clásico Asteroids, utilizando C# para programar toda la lógica del juego. En este proyecto trabajé en el movimiento fluido de la nave espacial, la generación aleatoria de asteroides, el sistema de colisiones, y la mecánica de disparo.
+                    También implementé un sistema de puntuación, efectos visuales básicos, animaciones sencillas y sonidos que acompañan la experiencia de juego.</p>
+    
+                <div class="boton">
+                    <a target="_blank" href="https://www.tucolombiadmc.com/" role="link" class="buttom inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        Preview
+                        </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="proyecto">
+            <img src="img/proyecto5.jpg" alt="Proyecto 1" class="zoom">
+    
+            <div class="proyecto-contenido">
+                <h3>PetsHome</h3>
+    
+                <div class="tecnologias">
+                    <a class="tecnologia-btn1">Figma</a>
+                    <a class="tecnologia-btn2">Ilustrator</a>
+                </div>
+    
+                <p class="descripcion-pro">Creé un mockup y prototipo interactivo para un sistema de gestión de adopciones en Buenos Aires, con el objetivo de optimizar la experiencia de los usuarios en el proceso. Utilicé Figma para diseñar una interfaz intuitiva, estructurando la información de manera clara y accesible. El prototipo incluyó interacciones clave para simular el flujo de navegación, facilitando la validación del diseño antes del desarrollo.</p>
+    
+                <div class="boton">
+                    <a target="_blank" href="https://www.figma.com/design/ZEFucUK1d7ElaCXCihYGlL/PetsHome-Copy?node-id=1-2&t=Sqw7QsXJuZkQm4bE-1" role="link" class="buttom inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+                        mockup
+                         </a>
+                    <a target="_blank" href="https://www.figma.com/proto/A1IYhbqYeGyF5QeXqtmqUF/PetsHome-2.1?node-id=29-3265&t=oI7psxLwrHZIuaOV-0&scaling=scale-down&content-scaling=fixed&page-id=17%3A2&starting-point-node-id=38%3A415&show-proto-sidebar=1" role="link" class="buttom inline-flex bg-gray-100 text-gray-800 border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition dark:text-white dark:bg-gray-800 border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        Preview
+                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <div class="contenedor-mi">
+            <p class="text-mi">Me llamo Maria Perez tengo 27 anos y soy venezolana. Empecé en la programación de forma didacta, a los 18 años, despues hice varios cursos a lo largo de los aòos e ido mejorando en mi trayectoria.
+                <br> Hasta ahora, he trabajado exclusivamente como freelancer, pero también he colaborado en <u>diversos proyectos dentro de la misma empresa.</u> Esto me ha permitido enfrentar desafíos constantes, aprender de nuevas experiencias y mantenerme motivada con metas que me impulsan a mejorar continuamente.
+                
+                <br>Soy una profesional en <u>constante evolución</u>, apasionada por los retos y el aprendizaje continuo. Hasta ahora, he trabajado de manera independiente, pero <u>busco integrarme a una empresa</u> donde pueda aplicar mis habilidades en programación, UX/UI y gestión de recursos humanos en un entorno colaborativo.
+                
+                <br>Mi objetivo es seguir desarrollándome profesionalmente, aportar soluciones innovadoras y generar proyectos de calidad. 
+            </p>
+            <img class="img-mi" src="img/perfil.jpg" alt="Foto sobre mí">
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Maria Perez. Casi todos los derechos reservados </p>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,922 @@
+:root {
+    --light-bg: #f8f8f8e6;
+    --light-bc: white;
+    --light-text: rgb(9, 32, 77);
+    --dark-bg: #1b1b33;
+    --dark-text: white;
+    --header-bg-light: rgba(250, 250, 250, 0.95);
+    --header-bg-dark: rgba(27, 36, 56, 0.95); /* Fondo más oscuro para el header */
+}
+
+body {
+    font-family: "Onest", sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+    background: var(--light-bg);
+    color: var(--light-text);
+    padding-left: 150px;
+}
+
+header {
+    background: var(--header-bg-light); 
+    padding: 2px 10px;
+    text-align: center;
+    border-radius: 40px;
+    border: 1px solid #ffffff18;
+    width: fit-content;
+    margin: 9px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background 0.7s ease, box-shadow 0.7s ease;
+    z-index: 1000;
+}
+
+header.dark-mode {
+    background: var(--header-bg-dark);
+    color: var(--dark-text); /* Asegura que el texto en el header cambie a blanco */
+    box-shadow: 0 3px 3px  rgba(82, 82, 82, 0.39);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px 5px;
+    border-radius: 20px;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a.active { 
+    color: rgb(59 130 246 / .5);
+}
+
+
+
+#toggle-theme {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: -3px;
+}
+
+#toggle-theme :hover {
+    transform: scale(1.1); /* Efecto de zoom solo sobre el contenido */
+}
+
+/* Si quieres que el color cambie en dark mode, asegúrate de que se mantenga blanco */
+body.dark-mode #toggle-theme {
+    color: white; /* Asegura que en modo oscuro el ícono también sea blanco */
+    margin-top: -4.5px;
+}
+
+#theme-list {
+    position: absolute;
+    top: 42px;
+    left: 80%;
+    transform: translateX(-50%);
+    background-color: var(--light-bc);
+    color: var(--light-text);
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    width: 116px;
+    text-align: center;
+}
+
+#theme-list li {
+    cursor: pointer;
+    padding: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#theme-list li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+/* Cambiar los colores de los títulos y descripciones en modo oscuro */
+body.dark-mode .title {
+    color: var(--dark-text);
+}
+
+body.dark-mode .text-descripcion {
+    color: var(--dark-text);
+}
+
+body.dark-mode strong {
+    color: var(--dark-text); /* Asegura que el texto fuerte se vea correctamente */
+}
+
+/* Ajustes en el texto de los elementos del menú */
+body.dark-mode nav ul li a {
+    color: var(--dark-text); /* Color del texto del menú en modo oscuro */
+}
+
+body.dark-mode nav ul li a:hover,
+body.dark-mode nav ul li a.active {
+    color: rgb(59 130 246 / .5); /* Ajustar color hover y active en modo oscuro */
+}
+
+.perfil {
+    display: flex; /* Usa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex-start; /* Alinea al inicio (izquierda) */
+    padding-left: 20px; /* Espacio desde el borde izquierdo */
+    padding-top: 140px;
+}
+
+.perfil img {
+    width: 64px; /* Asegura que sea un tamaño adecuado */
+    height: 64px; /* Igual que el width para que sea un círculo perfecto */
+    border-radius: 50%; /* Hace la imagen completamente redonda */
+    transition: transform 0.6s;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+}
+
+.perfil img:hover {
+    transform: scale(1.1);
+}
+
+.disponible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 24px;
+    padding: 3px 10px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 40px; /* Bordes redondeados */
+    color: rgb(19, 82, 24); /* Color del texto */
+    background: rgba(202, 255, 218, 0.9); /* Color de fondo */
+    font-weight: normal;
+    position: relative;
+    transition: transform 0.3s ease-in-out; /* Solo afectando el contenido del botón */
+    border: 3px solid transparent; /* Borde transparente por defecto */
+    background-clip: padding-box;
+}
+
+/* Animación del borde (sin afectar al hover) */
+.disponible::after {
+    content: "";
+    position: absolute;
+    inset: -3px; /* Tamaño del borde */
+    border-radius: 40px; /* Asegura que el borde sea redondeSado */
+    padding: 1.4px; /* Grosor del borde */
+    background: linear-gradient(90deg, #7affd0, #36e47e, #14a06f);
+    -webkit-mask: 
+        linear-gradient(rgba(223, 255, 226, 0.911) 0 0) content-box, 
+        linear-gradient(rgb(223, 255, 226, 0.911));
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    animation: animarBorde 3s linear infinite;
+}
+
+.disponible:hover {
+    transform: scale(1.1); /* Efecto de zoom solo sobre el contenido */
+}
+
+/* Animación del borde */
+@keyframes animarBorde {
+    0% { background: linear-gradient(90deg, #14a06f, #2ecc71, #14a06f); }
+    100% { background: linear-gradient(90deg, #2ecc71, #14a06f, #2ecc71); }
+}
+
+body.dark-mode .disponible {
+    background: rgba(20, 30, 56, 0.95); /* Un verde más oscuro en modo oscuro */
+    color: white; /* Letras en blanco */
+    position: relative; /* Asegura que el ::after se posicione correctamente */
+    z-index: 1; /* Para que no quede detrás del fondo oscuro */
+}
+
+body.dark-mode .disponible::after {
+    content: "";
+    position: absolute;
+    inset: -3px; /* Tamaño del borde */
+    border-radius: 40px; /* Asegura que el borde sea redondeado */
+    padding: 1.4px; /* Grosor del borde */
+    background: linear-gradient(90deg, #7affd0, #36e47e, #14a06f);
+    -webkit-mask: 
+        linear-gradient(rgba(223, 255, 226, 0.911) 0 0) content-box, 
+        linear-gradient(rgb(223, 255, 226, 0.911));
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    animation: animarBorde 3s linear infinite;
+    opacity: 1; /* Asegura que sea visible */
+}
+
+
+.experiencia-btn {
+    background-color: #f3f4f6; /* Gris claro */
+    color: #1f2937; /* Gris oscuro */
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.experiencia-btn:hover {
+    background-color: #1f2937;
+    color: white;
+}
+
+.title {
+    font-size: 3rem;
+    color: rgb(31 41 55);
+    margin-bottom: 1px;
+}
+
+
+.text-descripcion {
+    font-size: 1.15rem;
+    color: rgb(31, 41, 55);
+    text-align: left;
+    max-width: 600px; /* Ajusta el ancho para controlar los saltos de línea */
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+.text-descripcion strong {
+    color: rgb(234, 179, 8);
+    font-weight: bold;
+    display: inline; /* Asegura que el texto no haga un salto de línea */
+}
+
+body.dark-mode strong {
+    color: rgb(236, 191, 54); 
+}
+
+#experiencia {
+    position: relative;
+    margin-top: 5px; /* Ajuste para separarlo de otros elementos */
+    padding: 20px;
+    z-index: 1; /* Asegura que los elementos de esta sección estén encima de otros */
+}
+
+
+
+.titulo-experiencia {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre icono y texto */
+    color: rgb(31 41 55); /* Color en modo claro */
+}
+body.dark-mode .titulo-experiencia {
+    color: white; 
+}
+
+/* Línea central (pseudo-elemento) */
+.linea-tiempo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    margin-left: 20px;
+    margin-right: 20px;
+    z-index: 0; /* Asegura que la línea no se superponga a los puntos */
+}
+
+.linea-tiempo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ccc; /* Gris */
+    left: 6px;
+    transform: translateX(-10%); /* Centrado de la línea */
+    z-index: -1; /* Hace que la línea esté por debajo de los puntos */
+}
+
+.punto {
+    display: flex;
+    align-items: flex-start;  /* Alinea los elementos hacia arriba para que no se estiren */
+    margin-bottom: 40px; /* Espacio entre los puntos */
+    margin-top: 50px;
+}
+
+/* Estilo del círculo amarillo */
+.circulo {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: rgb(250 204 21);
+    margin-right: 20px; /* Espacio entre el círculo y la descripción */
+    flex-shrink: 0; /* Evita que el círculo se deforme */
+}
+
+/* Descripción alineada en la parte izquierda */
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 20px;
+    max-width: 300px; /* Limita el ancho de la descripción */
+    flex-grow: 1; /* Permite que la descripción ocupe el espacio restante */
+}
+
+
+/* Estilo para los títulos y demás textos */
+.titulo {
+    font-weight: bold;
+    color: rgb(250 204 21);
+    font-size: 1.25rem;
+    white-space: nowrap; /* Evita que el título se rompa en varias líneas */
+}
+
+.empresa {
+    font-size: 1.25rem;
+    color: rgb(75 85 99);
+    font-weight: bold;
+}
+
+body.dark-mode .empresa{
+    color: white;
+}
+
+
+.ano {
+    color: #4b5563cc;
+    font-size: .875rem;
+}
+
+body.dark-mode .ano{
+    color: white;
+}
+
+/* Estilo para la descripción */
+.texto-descripcion {
+    font-size: 18px;
+    color: rgba(75, 85, 99);
+    margin-left: 20px; /* Añadido para separar el texto de la descripción */
+    display: inline-block; /* Asegura que esté alineado con el título a la derecha */
+    margin-top: 2px; /* Espacio entre la descripción y el título */
+    max-width: calc(50% - 30px); /* Limita el ancho de la descripción sin exceder el contenedor */
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste correctamente */
+}
+
+body.dark-mode .texto-descripcion{
+    color: white; 
+}
+
+/* Aseguramos que la descripción esté alineada con el título */
+.punto .descripcion + .texto-descripcion {
+    margin-left: 50px; /* Espacio para que la descripción esté a la derecha */
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    margin: 10px;
+    transition: all 0.3s ease;
+    margin-bottom: 80px;
+}
+
+.gmail-btn span,
+.linkedin-btn span {
+    font-size: 15px;
+    margin-right: 10px; /* Ajusta este valor según lo que necesites */
+}
+
+/* Botón de Gmail */
+.gmail-btn {
+    background-color: var(--light-bg); /* Fondo en modo claro */
+    color: rgb(25, 33, 57); /* Color del texto */
+    border: 1px solid rgb(196, 196, 196); /* Borde del botón */
+}
+
+.gmail-btn:hover {
+    background-color: rgb(25, 33, 57); /* Fondo en hover de LinkedIn */
+    color: white; /* Color del texto en hover */
+}
+
+/* Botón de LinkedIn */
+.linkedin-btn {
+    font-size: 15px;
+    gap: 10px;
+    background-color: var(--light-bg); /* Fondo en modo claro */
+    color: rgb(25, 33, 57); /* Color del texto */
+    border: 1px solid rgb(196, 196, 196);
+}
+
+.linkedin-btn:hover {
+    background-color: rgb(25, 33, 57); /* Fondo en hover de LinkedIn */
+    color: white; /* Color del texto en hover */
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode .gmail-btn {
+    background-color: rgb(40, 46, 61); /* Fondo en modo oscuro */
+    color: white;
+    border: 1px solid rgba(224, 224, 224, 0.233); /* Borde blanco */
+}
+
+body.dark-mode .gmail-btn:hover {
+    background-color: #ffffff; /* Fondo en hover de LinkedIn */
+    color: rgb(25, 33, 57) ;
+}
+
+body.dark-mode .linkedin-btn {
+    background-color: rgb(40, 46, 61); /* Fondo en modo oscuro */
+    color: white;
+    border: 1px solid rgba(224, 224, 224, 0.233); /* Borde blanco */
+}
+
+body.dark-mode .linkedin-btn:hover {
+    background-color: #ffffff; /* Fondo en hover de LinkedIn */
+    color: rgb(25, 33, 57) ;
+}
+
+#experiencia h2 {
+    display: flex;
+    align-items: center; /* Centra el texto y el SVG verticalmente */
+    gap: 10px; /* Espacio entre el texto y el ícono */
+    font-size: 24px; /* Ajusta el tamaño de la fuente */
+    margin-top: 18px; /* Espacio superior para mejorar la alineación */
+}
+
+.titulo-proyectos {
+
+    margin-bottom: 100px;
+}
+
+body.dark-mode  .descripcion-pro{
+    color: white;
+}
+
+#proyectos {
+    max-width: 100rem;
+    margin: auto;
+    padding: 20px;
+}
+
+.proyecto {
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.proyecto img {
+    width: 300px;
+    border-radius: 8px;
+    
+}
+
+.proyecto-contenido .descripcion-pro {
+    max-width:80%;
+  
+}
+  
+
+.proyecto-contenido {
+    flex: 1;
+}
+
+.proyecto h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.tecnologias {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.tecnologia-btn1 {
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.tecnologia-btn2 {
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.proyecto p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.boton {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.buttom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: #f1f1f198;
+    color: rgb(25, 33, 57);
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid  rgb(224, 224, 224);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.buttom:hover {
+    background: rgb(25, 33, 57);
+    color: #ffffff;
+}
+
+body.dark-mode .buttom{
+    background: rgb(75 85 99 );
+    color: rgba(248, 247, 247, 0.897);
+    border: 1px solid  rgba(224, 224, 224, 0.267);
+}
+
+.btn i {
+    font-size: 1.2em;
+}
+
+.img-mi{
+    border: 6px solid #d6d6d6af ;
+    border-radius: 40px;
+    height: 330px;
+    width: 330px;
+    transform: rotate(8deg); /* Rota la imagen 15 grados en sentido antihorario */
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .img-mi{
+    border: 6px solid #444444ad 
+}
+
+.contenedor-mi {
+    display: flex; /* Establece el contenedor como flexbox */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+    gap: 50px; /* Espacio entre el texto y la imagen */
+    padding: 20px; /* Espaciado interno */
+    padding-bottom: 100px;
+}
+
+.text-mi {
+    font-size: 1em; /* Tamaño de la fuente */
+    line-height: 1.6; /* Altura de línea para un mejor espaciado entre párrafos */
+    color: #333; /* Color del texto */
+    max-width: 600px; /* Limita el ancho máximo del texto */
+    text-align: justify;
+    
+}
+
+.text-mi u{
+    color: rgb(234 179 8);
+}
+
+body.dark-mode .text-mi{
+    color: rgb(233, 233, 233);
+}
+
+body.dark-mode .text-mi u{
+    color: rgb(240, 255, 31);
+}
+
+.text-mi br{
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: rgb(199, 199, 199);
+    margin-top: 20px;
+}
+
+/* Cambiar el color de los íconos (Sol y Luna) */
+#sun-icon {
+    color: #151c33; 
+    font-size: 20px;
+    
+}
+
+.zoom {
+    transition: transform 0.3s ease-in-out;
+}
+
+.zoom:hover {
+    transform: scale(1.2); /* Aumenta el tamaño en un 20% al pasar el mouse */
+}
+/* Mostrar solo el sol en modo claro */
+body:not(.dark-mode) #sun-icon {
+    display: inline-block;
+}
+
+body:not(.dark-mode) #moon-icon {
+    display: none;
+   
+}
+
+/* Mostrar solo la luna en modo oscuro */
+body.dark-mode #sun-icon {
+    display: none;
+}
+
+body.dark-mode #moon-icon {
+    display: inline-block;  
+    color: white; /* Luna en blanco en modo oscuro */
+   
+}
+@media screen and (max-width: 768px) {
+
+    body {
+      padding-left: 0;
+      padding-top: 120px;
+    }
+  
+    h1{
+       text-align: center;
+    }
+
+    .botones{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:  center;
+    }
+
+
+    /* HEADER AJUSTADO */
+    header {
+        width: 85%;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+    
+      nav ul li {
+        margin: 0;
+      }
+    
+      nav ul li a {
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+  
+    /* THEME LIST */
+    .theme-list {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+      
+    .theme-list ul {
+        display: flex;
+        gap: 12px;
+        font-size: 16px; /* Tamaño regular */
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+  
+    /* PERFIL */
+    .perfil {
+      flex-direction: column;
+      padding-top: 60px;
+      padding-left: 0;
+      gap: 12px;
+      align-items: center;
+    }
+  
+    .perfil img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .disponible {
+      margin-left: 0;
+      font-size: 14px;
+      padding: 5px 15px;
+    }
+  
+    /* TÍTULO Y DESCRIPCIÓN */
+    .title {
+      font-size: 2rem;
+      margin: 20px auto 10px auto;
+    }
+  
+    .text-descripcion {
+      font-size: 1rem;
+      max-width: 90%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    /* SECCIÓN SOBRE MÍ */
+    #sobre-mi {
+        flex-direction: column; /* Cambia la dirección del flex para poner la imagen arriba */
+        align-items: center; /* Centra la imagen y el texto */
+        justify-content: center; /* Centra los elementos */
+        margin-left: 20px;
+    }
+
+    .contenedor-mi {
+        display: flex;
+        flex-direction: column; /* Asegura que la imagen esté encima del texto */
+        align-items: center;
+        text-align: center;
+    }
+
+    #sobre-mi img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+    }
+
+    .text-mi {
+        font-size: 1rem;
+        max-width: 90%;
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+    /* SECCIÓN PROYECTOS */
+
+    #experiencia h2 {
+        display: flex;
+        align-items: flex-start; /* Alinea el texto al principio (izquierda) */
+        gap: 10px; /* Espacio entre el texto y el ícono */
+        font-size: 24px; /* Ajusta el tamaño de la fuente */
+        margin-top: 18px; /* Espacio superior para mejorar la alineación */
+        text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    }
+
+    .proyecto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea todo el contenido al inicio (izquierda) */
+        margin-bottom: 30px;
+    }
+      
+    .proyecto img {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 15px; /* Espacio entre la imagen y el contenido */
+    }
+      
+    .proyecto-contenido {
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+      
+    .proyecto-contenido h3 {
+        text-align: left; /* Asegura que el título también esté alineado a la izquierda */
+        margin-bottom: 10px;
+    }
+      
+    .proyecto-contenido .tecnologias {
+        display: flex;
+        justify-content: flex-start; /* Alinea las tecnologías a la izquierda */
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px; /* Espacio entre las tecnologías y la descripción */
+    }
+      
+    .proyecto-contenido .descripcion-pro {
+        font-size: 1rem;
+        max-width: 90%;
+        text-align: left; /* Alinea la descripción a la izquierda */
+        margin-bottom: 15px; /* Espacio entre la descripción y el botón */
+    }
+      
+    .proyecto-contenido .boton {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+      
+    
+      
+    /* SECCIÓN EXPERIENCIA */
+
+    #experiencia {
+        width: 90%; /* O el ancho deseado */
+        text-align: start;
+    }
+    /* Estilo del círculo amarillo */
+    .circulo {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: rgb(250 204 21);
+        margin-right: 20px; /* Espacio entre el círculo y la descripción */
+        flex-shrink: 0; /* Evita que el círculo se deforme */
+    }
+    
+    /* Descripción alineada en la parte izquierda */
+   
+    .titulo {
+        font-weight: bold;
+        color: rgb(250, 204, 21);
+        font-size: 1.25rem;
+        white-space: nowrap;
+        margin-top: -16px;
+        margin-left: 40px;
+
+    }
+    .ano{
+        margin-left: 40px;
+    }
+    
+    .empresa{
+        margin-left: 40px;
+    }
+    
+    /* Estilo para los títulos y demás textos */
+    .linea-tiempo {
+        display: block; /* Hace que cada elemento se acomode verticalmente */
+      }
+    
+      .punto {
+        display: block;
+        margin-bottom: 20px;
+        padding-top: 30px;
+      }
+    
+    /* Estilo para la descripción */
+    .texto-descripcion {
+        margin-left: 0; /* Alinea el texto a la izquierda en dispositivos pequeños */
+        max-width: 100%; /* Se adapta al 100% del contenedor */
+        margin-top: 15px;
+        
+      
+    }
+    
+    footer p {
+        color: #757575;
+      font-size: 15px;
+    }
+    
+
+  }
+  
